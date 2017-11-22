@@ -4,6 +4,7 @@ namespace PeliculasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use PeliculasBundle\Entity\Pelicula;
 
 class DefaultController extends Controller
 {
@@ -40,14 +41,26 @@ class DefaultController extends Controller
      */
     public function insertarLAction()
     {
-        return $this->render('PeliculasBundle:Default:insertarl.html.twig');
+      return $this->render('PeliculasBundle:Default:insertarl.html.twig');
     }
     /**
      * @Route("/peliculas", name="peliculas")
      */
     public function peliculasAction()
     {
-        return $this->render('PeliculasBundle:Default:peliculas.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Pelicula::class);
+        $pelicula = $repository->findAll();
+        return $this->render('PeliculasBundle:Default:peliculas.html.twig', array('pelicula' => $pelicula));
+    }
+
+    /**
+     * @Route("/mostrar/{id}", name="peliculas_id")
+     */
+    public function peliculaActionId($id)
+    {
+        $repository = $this->getDoctrine()->getRepository(Pelicula::class);
+        $pelicula = $repository->find($id);
+        return $this->render('PeliculasBundle:Default:pelicula.html.twig', array('pelicula' => $pelicula));
     }
     /**
      * @Route("/libros", name="libros")

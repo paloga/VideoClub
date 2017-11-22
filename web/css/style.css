@@ -412,6 +412,42 @@ p a:hover {
   margin-bottom: 60px;
 }
 
+.form-signins {
+  max-width: 420px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signins .form-signin-heading,
+.form-signins .checkbox {
+  margin-bottom: 30px;
+}
+.form-signins .checkbox {
+  font-weight: normal;
+}
+.form-signins .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signins .form-control:focus {
+  z-index: 2;
+}
+.form-signins input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signins input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
 .form-signin {
   max-width: 350px;
   padding: 15px 35px 45px;
@@ -447,4 +483,16 @@ p a:hover {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.w3-card-4{
+	margin-top: 20px;
+	margin-left: 180px;
+	text-align: center;
+}
+.flotar{
+	margin: 10px;
+	float: left;
+}
+.contenedorPeliculas{
+	overflow: hidden;
 }
